@@ -9,7 +9,7 @@ int main(){
 	printf("1. toplama\n");
 	printf("2. çıkarma\n");
 	printf("3. çarpma\n");
-    printf("4. bölme\n");
+        printf("4. bölme\n");
 	scanf("%d", &secim);
 	printf("Sayı giriniz:");
 	scanf("%d", &sayi1);
@@ -26,7 +26,13 @@ int main(){
 	printf("Sonuç:%d\n", sayi1*sayi2);
 }
 	else if (secim == 4){
+	if (sayi1, sayi2 == 0){
+	printf("Sıfır ile bölme yapamazsın!\n");
+	return 0;
+}
+	else{
         printf("Sonuç: %.2f\n", (float)sayi1 / sayi2);
+}
 }
 	else{
 	printf("Geçersiz girdi!\n");
