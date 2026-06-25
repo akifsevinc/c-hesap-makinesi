@@ -9,7 +9,7 @@ int main(){
 	printf("1. toplama\n");
 	printf("2. çıkarma\n");
 	printf("3. çarpma\n");
-        printf("4. bölme\n");
+    printf("4. bölme\n");
 	scanf("%d", &secim);
 	printf("Sayı giriniz:");
 	scanf("%d", &sayi1);
