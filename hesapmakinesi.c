@@ -5,20 +5,34 @@ int main(){
     int secim = 0;
     int sayi1;
     int sayi2;
-    while (secim != 6){
+    int karekoksayi;
+    while (secim != 7){
     printf("1. Toplama\n");
     printf("2. Çıkarma\n");
     printf("3. Çarpma\n");
     printf("4. Bölme\n");
     printf("5. Üs\n");
-    printf("6. Çıkış\n");
+    printf("6. Karekök\n");
+    printf("7. Çıkış\n");
     printf("Lütfen yapmak istediğiniz işlemi seçiniz:");
     scanf("%d", &secim);
-    if (secim == 6){
+    if (secim == 7){
         printf("Çıkış yapılıyor!\n");
         return 0;
     }
-    printf("İlk sayıyı giriniz:");
+    if (secim == 6){
+        printf("Lütfen karekökünü almak istediğiniz sayıyı giriniz:");
+        scanf("%d", &karekoksayi);
+        if (karekoksayi < 0){
+            printf("Negatif değer giremezsin!\n");
+            continue;
+        }
+        else{
+            printf("Sonuç:%.2f\n",sqrt(karekoksayi));
+        }
+        continue;
+    }
+        printf("İlk sayıyı giriniz:");
     if (scanf("%d", &sayi1) != 1){
         printf("Lütfen sayı giriniz!\n");
         while (getchar() != '\n');
