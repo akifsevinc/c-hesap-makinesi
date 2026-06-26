@@ -1,18 +1,20 @@
 #include <stdio.h>
+#include <math.h>
 
 int main(){
     int secim = 0;
     int sayi1;
     int sayi2;
-    while (secim != 5){
+    while (secim != 6){
     printf("1. Toplama\n");
     printf("2. Çıkarma\n");
     printf("3. Çarpma\n");
     printf("4. Bölme\n");
-    printf("5. Çıkış\n");
+    printf("5. Üs\n");
+    printf("6. Çıkış\n");
     printf("Lütfen yapmak istediğiniz işlemi seçiniz:");
     scanf("%d", &secim);
-    if (secim == 5){
+    if (secim == 6){
         printf("Çıkış yapılıyor!\n");
         return 0;
     }
@@ -22,7 +24,7 @@ int main(){
         while (getchar() != '\n');
         continue;
     }
-    printf("İkinci sayıyı giriniz:", &sayi2);
+    printf("İkinci sayıyı giriniz:");
     if (scanf("%d", &sayi2) != 1){
         printf("Lütfen sayı giriniz!\n");
         // while loop'unu engelleyen kısım
@@ -45,6 +47,10 @@ int main(){
         else{
             printf("Sonuç:%.2f\n",(float)sayi1/sayi2);
         }
+    }
+
+    else if (secim == 5){
+        printf("Sonuç:%.1f\n",(float)pow(sayi1, sayi2));
     }
 
     else {printf("Geçersiz girdi!\n");
