@@ -6,21 +6,34 @@ int main(){
     int sayi1;
     int sayi2;
     int karekoksayi;
-    while (secim != 7){
+    int kupsayi;
+    while (secim != 8){
     printf("1. Toplama\n");
     printf("2. Çıkarma\n");
     printf("3. Çarpma\n");
     printf("4. Bölme\n");
-    printf("5. Üs\n");
-    printf("6. Karekök\n");
-    printf("7. Çıkış\n");
+    printf("5. Kare\n");
+    printf("6. Küp\n");
+    printf("7. Karekök\n");
+    printf("8. Çıkış\n");
     printf("Lütfen yapmak istediğiniz işlemi seçiniz:");
-    scanf("%d", &secim);
-    if (secim == 7){
+    if (scanf("%d", &secim) != 1) {
+        printf("Lütfen geçerli bir menü numarası giriniz!\n");
+        while (getchar() != '\n');
+        secim = 0;
+        continue;
+    }
+
+    if (secim > 8 || secim < 0 || secim == 0){
+        printf("Geçersiz girdi!\n");
+        continue;
+    }
+
+    if (secim == 8){
         printf("Çıkış yapılıyor!\n");
         return 0;
     }
-    if (secim == 6){
+    if (secim == 7){
         printf("Lütfen karekökünü almak istediğiniz sayıyı giriniz:");
         scanf("%d", &karekoksayi);
         if (karekoksayi < 0){
@@ -30,6 +43,13 @@ int main(){
         else{
             printf("Sonuç:%.2f\n",sqrt(karekoksayi));
         }
+        continue;
+    }
+
+    if (secim == 6){
+        printf("Lütfen küpünü almak istediğiniz sayıyı giriniz:");
+        scanf("%d", &kupsayi);
+        printf("Sonuç:%.1f\n", (float)kupsayi*kupsayi*kupsayi);
         continue;
     }
         printf("İlk sayıyı giriniz:");
@@ -67,9 +87,6 @@ int main(){
         printf("Sonuç:%.1f\n",(float)pow(sayi1, sayi2));
     }
 
-    else {printf("Geçersiz girdi!\n");
-
-    }
 }
     return 0;
 }
